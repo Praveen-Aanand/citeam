@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "staffmanagementuk": {
+      "hosting": {
+        "main": [
+          "citeam"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "staffmanagementuk"
+  }
+}
