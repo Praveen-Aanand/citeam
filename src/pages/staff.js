@@ -175,7 +175,7 @@ function TableXp(props) {
                         </tr>
                     </table>
 
-                    <Button
+                    {props.data.Phone!=="8883424441"?<Button
                         variant="contained"
                         color="#fffff"
                         style={{ backgroundColor: 'red', color: 'white' }}
@@ -183,7 +183,7 @@ function TableXp(props) {
                         onClick={() => deleteUser(props.data.id, props.data.Name)}
                     >
                         Remove
-                    </Button>
+                    </Button>:null}
                 </div>
                 </Dialog>
         </>

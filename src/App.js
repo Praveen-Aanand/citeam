@@ -2,7 +2,7 @@ import './App.css';
 
 import { Component } from 'react';
 import firebase from "firebase";
-import { Redirect } from 'react-router-dom';
+import { Redirect,Link } from 'react-router-dom';
 import Drawer from "./components/drawer"
 import { UserData } from "./store";
 import DateReport from "./components/datePicker"
@@ -95,6 +95,7 @@ class App extends Component {
       alert("un Authorized")
       return (
         <Redirect to="/login" />
+        // <p>"hello"</p>
       )
     }
     else {

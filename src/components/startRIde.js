@@ -140,6 +140,13 @@ export default function BasicTextFields() {
       });
     })
   }
+  const CancleRide = () => {
+   if(window.confirm("do you want to cancle ?")){
+    firebase.firestore().collection('onboarding').doc(user.data.phoneNumber).delete().then(()=>{
+      setCommited(false)
+    });
+   }
+  }
   const handleDateChangeStart = (date) => {
     console.log(date)
     setStart(date);
@@ -249,6 +256,13 @@ export default function BasicTextFields() {
 
       <Button variant="contained" color="primary" onClick={() => FinishRide()}>
         Finish Ride
+           </Button>
+           <br/>
+           <br/><br/>
+           <br/>
+           <br/>
+           <Button variant="contained" color="red" onClick={() => CancleRide()}>
+        Cancle Ride
            </Button>
           </div>
       }

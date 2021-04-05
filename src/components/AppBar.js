@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { UserData } from "../store";
 import firebase from "firebase";
-import {Redirect} from 'react-router-dom';
+import {Redirect,Link} from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -28,11 +28,13 @@ export default function ButtonAppBar(props) {
 const user=UserData.useState(s=>s) 
 const LogOut=()=>{
   firebase.auth().signOut().then(()=>{
-    return <Redirect to={`/login`}/>
+    document.getElementById("logout").click();
+    return 0
   })
 }
   return (
     <div className={classes.root}>
+      <Link to={`./login`}  id="logout" ></Link>
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={()=>props.onClick()}>
